@@ -1,0 +1,102 @@
+<div class="ms-2 mb-4">
+  <a href="javascript:void(0)" class="fw-bold">Xuất File SVG</a
+  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button nz-button nzType="primary" (click)="addStudentPopup()">
+    Thêm ngành học
+  </button>
+</div>
+<nz-input-group>
+  <nz-select
+    nzBorderless
+    style="width: 10%"
+    nzAllowClear
+    [ngModel]="null"
+    nzPlaceHolder="Lựa chọn"
+  >
+    <nz-option [nzLabel]="'Hoạt động'" [nzValue]="0"></nz-option>
+    <nz-option [nzLabel]="'Ngừng hoạt động'" [nzValue]="1"></nz-option>
+  </nz-select>
+  <ng-template #suffixIconSearch>
+    <span nz-icon style="color: gray" nzType="search"></span>
+  </ng-template>
+  &nbsp;
+  <nz-input-group
+    style="width: 80%; border: none !important"
+    [nzPrefix]="suffixIconSearch"
+  >
+    <input type="text" nz-input placeholder=" Tìm kiếm mã/ tên ngành học" />
+  </nz-input-group>
+</nz-input-group>
+<!-- /////////////
+ -->
+
+<div class="mt-2" nz-row nzGrid>
+  <div nz-col nzSpan="18">
+    <nz-table #basicTable [nzData]="dataSet">
+      <thead>
+        <tr>
+          <th class="fw-bold">Name</th>
+          <th class="fw-bold">Teacher Id</th>
+          <th class="fw-bold">Phone number</th>
+          <th class="fw-bold">Email address</th>
+          <th class="fw-bold">Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="row{{ i }}"
+          (click)="focusRow(i)"
+          *ngFor="let data of basicTable.data; let i = index"
+        >
+          <td class="d-flex align-items-center">
+            <img
+              class="iconAvt"
+              src="https://developer.android.com/static/guide/practices/ui_guidelines/images/article_icon_adaptive.gif"
+              alt=""
+            />
+            &nbsp; &nbsp;
+            {{ data.name }}
+          </td>
+          <td>{{ data.age }}</td>
+          <td>{{ data.address }}</td>
+          <td>
+            <a>Action 一 {{ data.name }}</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a>Delete</a>
+          </td>
+          <td>{{ data.gender }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="px-3" nz-col nzSpan="6" [align]="'center'">
+    <div class="p-3 pt-4 m-2 profile">
+      <img
+        class="imageAvt"
+        src="https://developer.android.com/static/guide/practices/ui_guidelines/images/article_icon_adaptive.gif"
+        alt=""
+      />
+      <p class="fw-bold mt-3 mb-0">Angular</p>
+      <p class="text-secondary">Frontend Framework</p>
+      <nz-input-group nzCompact nzSearch>
+        <span
+          class="mx-2 logo"
+          nz-icon
+          nzType="radar-chart"
+          nzTheme="outline"
+        ></span>
+        <span class="mx-2 logo" nz-icon nzType="phone" nzTheme="outline"></span>
+        <span class="mx-2 logo" nz-icon nzType="mail" nzTheme="outline"></span>
+      </nz-input-group>
+      <div class="text-start mt-3">
+        <p class="fw-bold">About</p>
+        <ul>
+          <li>Angular Version 16</li>
+          <li>Typescript</li>
+          <li>Cơ bản</li>
+        </ul>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

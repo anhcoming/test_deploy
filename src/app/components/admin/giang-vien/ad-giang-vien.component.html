@@ -1,0 +1,138 @@
+<div class="ms-2 mb-4">
+  <a href="javascript:void(0)" class="fw-bold">Export SVG</a
+  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button nz-button nzType="primary" (click)="addStudentPopup()">
+    Add Student
+  </button>
+</div>
+<nz-input-group>
+  <nz-select
+    nzBorderless
+    style="width: 10%"
+    nzAllowClear
+    [ngModel]="null"
+    nzPlaceHolder="Add filter"
+  >
+    <nz-option [nzLabel]="'Zhejiang'" [nzValue]="'Zhejiang'"></nz-option>
+    <nz-option [nzLabel]="'Jiangsu'" [nzValue]="'Jiangsu'"></nz-option>
+  </nz-select>
+  <ng-template #suffixIconSearch>
+    <span nz-icon style="color: gray" nzType="search"></span>
+  </ng-template>
+  &nbsp;
+  <nz-input-group
+    style="width: 80%; border: none !important"
+    [nzPrefix]="suffixIconSearch"
+  >
+    <input
+      type="text"
+      nz-input
+      placeholder=" Search for a student by name or email"
+    />
+  </nz-input-group>
+</nz-input-group>
+<!-- /////////////
+ -->
+
+<div class="mt-2" nz-row nzGrid>
+  <div nz-col nzSpan="18">
+    <nz-table #basicTable [nzData]="dataSet">
+      <thead>
+        <tr>
+          <th class="fw-bold">Name</th>
+          <th class="fw-bold">Teacher Id</th>
+          <th class="fw-bold">Phone number</th>
+          <th class="fw-bold">Email address</th>
+          <th class="fw-bold">Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="row{{ i }}"
+          (click)="focusRow(i)"
+          *ngFor="let data of basicTable.data; let i = index"
+        >
+          <td class="d-flex align-items-center">
+            <img
+              class="iconAvt"
+              src="https://i.pinimg.com/236x/3b/e4/70/3be4700baddefa379cfe2d8e05b539b0.jpg"
+              alt=""
+            />
+            &nbsp; &nbsp;
+            {{ data.name }}
+          </td>
+          <td>{{ data.age }}</td>
+          <td>{{ data.address }}</td>
+          <td>
+            <a>Action 一 {{ data.name }}</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a>Delete</a>
+          </td>
+          <td>{{ data.gender }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="px-3" nz-col nzSpan="6" [align]="'center'">
+    <div class="p-3 pt-4 m-2 profile">
+      <p class="fw-bold">PH15102</p>
+      <img
+        class="imageAvt"
+        src="https://i.pinimg.com/236x/3b/e4/70/3be4700baddefa379cfe2d8e05b539b0.jpg"
+        alt=""
+      />
+      <p class="fw-bold mt-3 mb-0">Vegeta Bejita Cadic</p>
+      <p class="text-secondary">Super Saiyan Blue</p>
+      <nz-input-group nzCompact nzSearch>
+        <span
+          class="mx-2 logo"
+          nz-icon
+          nzType="radar-chart"
+          nzTheme="outline"
+        ></span>
+        <span class="mx-2 logo" nz-icon nzType="phone" nzTheme="outline"></span>
+        <span class="mx-2 logo" nz-icon nzType="mail" nzTheme="outline"></span>
+      </nz-input-group>
+      <div class="text-start mt-3 fw-bold">
+        <p>About</p>
+        <ul>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+        </ul>
+        <br />
+        <div nz-row>
+          <div nz-col nzSpan="8">
+            <p class="mb-1">Age</p>
+            <p class="fw-medium">18</p>
+          </div>
+          <div nz-col nzSpan="8" nzOffset="8">
+            <p class="mb-1">Gender</p>
+            <p class="fw-medium">Males</p>
+          </div>
+        </div>
+        <p>People from the same class</p>
+
+        <div class="row zIndex mb-3">
+          <div class="col-7 leftZ">
+            <img
+              style="margin-left: 20px"
+              [ngStyle]="{ left: getLeft(i) }"
+              *ngFor="
+                let item of [1, 2, 3, 4, 6, 7, 8] | slice : 0 : 5;
+                let i = index
+              "
+              class="imageAvtSmall"
+              src="https://i.pinimg.com/236x/3b/e4/70/3be4700baddefa379cfe2d8e05b539b0.jpg"
+              alt=""
+            />
+          </div>
+          <div class="col-5">
+            <p class="mt-2 text-primary fw-normal">+12 more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

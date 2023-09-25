@@ -1,0 +1,20 @@
+body {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20210115/pngtree-cartoon-doodle-travel-icon-background-image_525368.jpg");
+}
+.popup {
+  padding: 3rem 5rem 5rem 5rem;
+  width: 30rem;
+  height: 30rem;
+  background-color: #001529;
+  margin: auto;
+  vertical-align: middle;
+}
+
+span {
+  margin-right: 5px;
+}

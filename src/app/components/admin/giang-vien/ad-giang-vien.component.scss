@@ -1,0 +1,50 @@
+.ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background: #1890ff;
+}
+.imageAvt {
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.iconAvt {
+  width: 2rem;
+  border-radius: 50%;
+}
+
+.imageAvtSmall {
+  max-width: 3rem;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.zIndex {
+  // width: 20rem;
+  // height: 20rem;
+}
+
+.profile {
+  background-color: #f1f1f1eb;
+  // height: 70rem;
+}
+.leftZ {
+  height: 100%;
+}
+.logo {
+  // border: 1px solid gray !important;
+  padding: 1rem;
+  background: #f0f6ff;
+  color: rgb(83, 83, 83);
+  border-radius: 20% !important;
+}
+.zindex {
+  width: 20rem;
+}
+
+.text-primary {
+  color: #1890ff;
+}
+
+.ant-table-row {
+  height: 30px; /* Chiều cao mới của row */
+}

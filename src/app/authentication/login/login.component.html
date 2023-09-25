@@ -1,0 +1,49 @@
+<body>
+  <form [formGroup]="validateForm" nz-form class="popup">
+    <h3 class="text-white">Welcome, Log into you account</h3>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your username!">
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="userName" nz-input placeholder="Username" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item style="height: 3rem">
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            formControlName="password"
+            nz-input
+            type="password"
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <p class="text-white m-0 mb-1 p-0">You are:</p>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-select formControlName="role">
+          <nz-option nzCustomContent nzLabel="Sinh viên" nzValue="student">
+            <span nz-icon nzType="user"></span><span> Sinh viên</span>
+          </nz-option>
+          <nz-option nzCustomContent nzValue="teacher" nzLabel="Giảng viên">
+            <span nz-icon nzType="solution" nzTheme="outline"></span> Giảng viên
+          </nz-option>
+          <nz-option nzCustomContent nzValue="admin" nzLabel="Admin">
+            <span nz-icon nzType="global" nzTheme="outline"></span>
+            Admin</nz-option
+          >
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control>
+        <button (click)="login()" nz-button nzType="primary">Log in</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</body>

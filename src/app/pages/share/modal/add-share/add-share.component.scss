@@ -1,0 +1,17 @@
+.image-container {
+  width: 100%;
+  /* Đặt kích thước của container */
+  height: 200px;
+  overflow: hidden;
+  /* Ẩn bất kỳ nội dung tràn ra ngoài container */
+  border: 1px solid #d9d9d9;
+}
+
+.image-container img {
+  width: 100%;
+  /* Đảm bảo hình ảnh chiếm toàn bộ không gian của container */
+  height: 100%;
+  /* Duy trì tỷ lệ khung hình ban đầu */
+  object-fit: contain;
+  /* Xóa khoảng trống dư thừa dưới hình ảnh */
+}

@@ -1,0 +1,48 @@
+<form nz-row nz-form>
+  <div nz-col nzSpan="15">
+    <nz-form-item>
+      <nz-form-label style="width: 20%">Name</nz-form-label>&nbsp;
+      <nz-form-control>
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label style="width: 20%">Teacher ID</nz-form-label>&nbsp;
+      <nz-form-control style="text-align: end">
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label style="width: 20%">Phone number </nz-form-label>&nbsp;
+      <nz-form-control style="text-align: end">
+        <input nz-input placeholder="" />
+      </nz-form-control> </nz-form-item
+    ><nz-form-item>
+      <nz-form-label style="width: 20%">Email address </nz-form-label>&nbsp;
+      <nz-form-control style="text-align: end">
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label style="width: 20%">Class</nz-form-label>&nbsp;
+      <nz-form-control style="text-align: end">
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label style="width: 20%">Gender</nz-form-label>&nbsp;
+      <nz-form-control style="text-align: end">
+        <input nz-input placeholder="" />
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+
+  <!-- ///////// -->
+  <div nz-col nzSpan="9" [align]="'center'" style="padding: 0px 20px">
+    <input class="px-3" type="file" (change)="getImage($event)" />
+    <br />
+    <div *ngIf="image1" class="image-container mx-3">
+      <img nz-image nzSrc="{{ image1 }}" />
+    </div>
+  </div>
+</form>
