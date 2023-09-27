@@ -15,13 +15,24 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 @NgModule({
   exports: [
+    NzPopconfirmModule,
+    NzPaginationModule,
     NzLayoutModule,
     NzBadgeModule,
+    NzDatePickerModule,
     NzButtonModule,
     NzProgressModule,
+    NzPopoverModule,
     NzMenuModule,
     NzImageModule,
     NzDividerModule,
@@ -33,6 +44,9 @@ import { NzBadgeModule } from 'ng-zorro-antd/badge';
     NzAutocompleteModule,
     NzSelectModule,
     NzUploadModule,
+    NzToolTipModule,
+    NzAvatarModule,
+    NzDropDownModule,
   ],
 })
 export class NgzorroModule {}

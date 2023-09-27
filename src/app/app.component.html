@@ -149,16 +149,42 @@
           </div>
           <!-- ======== -->
           <div [align]="'end'" nz-col nzSpan="8" nzOffset="8" class="">
-            <span nz-icon nzType="bell" class="me-3"></span>
             <span
-              routerLink="/auth/personal"
+              nz-popover
+              [(nzPopoverVisible)]="visible"
+              (nzPopoverVisibleChange)="change($event)"
+              nzPopoverTrigger="click"
+              [nzPopoverContent]="contentTemplate"
+              [nzPopoverPlacement]="'bottomRight'"
+              [nzPopoverBackdrop]="true"
+              nz-icon
+              nzType="bell"
+              class="me-3"
+              style="cursor: pointer"
+            ></span>
+            <span
+              nz-dropdown
+              [nzDropdownMenu]="menu"
               nz-icon
               nzType="user"
               class="me-3"
             ></span>
-            <button (click)="logout()" nz-button nzType="primary">
-              Log out
-            </button>
+            <nz-dropdown-menu #menu>
+              <ul nz-menu>
+                <li nz-menu-item (click)="openPersonal()">
+                  <span nz-icon nzType="user"></span>
+                  &nbsp; Hồ sơ
+                </li>
+                <li nz-menu-item (click)="changePass()">
+                  <span nz-icon nzType="key" nzTheme="outline"></span>
+                  &nbsp; Đổi mật khẩu
+                </li>
+                <li nz-menu-item (click)="logout()">
+                  <span nz-icon nzType="export"></span>
+                  &nbsp; Logout
+                </li>
+              </ul>
+            </nz-dropdown-menu>
           </div>
         </div>
       </nz-header>
@@ -169,4 +195,8 @@
       </nz-content>
     </nz-layout>
   </nz-layout>
+</ng-template>
+
+<ng-template #contentTemplate>
+  <app-noti></app-noti>
 </ng-template>

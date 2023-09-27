@@ -20,7 +20,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgzorroModule } from './ngzorro/ngzorro.module';
+import { NgzorroModule } from './ngzorro-module/ngzorro.module';
 import { LoginComponent } from './authentication/login/login.component';
 import { ForgotPassComponent } from './authentication/forgot-pass/forgot-pass.component';
 import { PersonalComponent } from './authentication/personal/personal.component';
@@ -47,6 +47,7 @@ import { GvLichDayComponent } from './components/teacher/lich-day/gv-lich-day.co
 import { GvLopHocComponent } from './components/teacher/lop-hoc/gv-lop-hoc.component';
 import { GvMonHocComponent } from './components/teacher/mon-hoc/gv-mon-hoc.component';
 import { GvSinhVienComponent } from './components/teacher/sinh-vien/gv-sinh-vien.component';
+import { NotiComponent } from './pages/share/popup/noti/noti.component';
 
 registerLocaleData(en);
 
@@ -79,6 +80,7 @@ registerLocaleData(en);
     GvLopHocComponent,
     GvMonHocComponent,
     GvSinhVienComponent,
+    NotiComponent,
   ],
   imports: [
     CommonModule,

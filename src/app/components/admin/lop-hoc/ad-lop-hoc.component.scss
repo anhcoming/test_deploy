@@ -1,0 +1,66 @@
+.ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background: #1890ff;
+}
+.imageAvt {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #e4e4e4;
+}
+
+.iconAvt {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #eeeeee;
+}
+tr {
+  cursor: pointer;
+}
+
+.infoCircle {
+  color: red;
+}
+.imageAvtSmall {
+  max-width: 3rem;
+  border-radius: 50%;
+  position: absolute;
+}
+button {
+  cursor: pointer;
+}
+.zIndex {
+  // width: 20rem;
+  // height: 20rem;
+}
+
+.profile {
+  background-color: #f1f1f1eb;
+  // height: 70rem;
+}
+.leftZ {
+  height: 100%;
+}
+.logo {
+  // border: 1px solid gray !important;
+  padding: 1rem;
+  background: #f0f6ff;
+  color: rgb(83, 83, 83);
+  border-radius: 20% !important;
+}
+.zindex {
+  width: 20rem;
+}
+
+.text-primary {
+  color: #1890ff;
+}
+
+.ant-table-row {
+  height: 30px; /* Chiều cao mới của row */
+}

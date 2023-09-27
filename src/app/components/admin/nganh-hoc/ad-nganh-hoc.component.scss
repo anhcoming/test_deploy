@@ -3,21 +3,37 @@
   background: #1890ff;
 }
 .imageAvt {
-  width: 10rem;
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
   border-radius: 50%;
+  border-style: solid;
+  border-color: #e4e4e4;
 }
 
 .iconAvt {
   width: 2rem;
+  height: 2rem;
+  object-fit: cover;
   border-radius: 50%;
+  border-style: solid;
+  border-color: #eeeeee;
+}
+tr {
+  cursor: pointer;
 }
 
+.infoCircle {
+  color: red;
+}
 .imageAvtSmall {
   max-width: 3rem;
   border-radius: 50%;
   position: absolute;
 }
-
+button {
+  cursor: pointer;
+}
 .zIndex {
   // width: 20rem;
   // height: 20rem;

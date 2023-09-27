@@ -1,0 +1,30 @@
+.imageAvt {
+  width: 3rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #e4e4e4;
+}
+
+.item {
+  align-items: center;
+  //   border-bottom: 1px solid gray;
+}
+body {
+  max-width: 45vh;
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+}
+.iconAvt {
+  width: 1rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #eeeeee;
+}
+.item :hover {
+  //   background: red !important;
+}
+.itemTo :hover {
+  background: rgb(230, 229, 229) !important;
+}

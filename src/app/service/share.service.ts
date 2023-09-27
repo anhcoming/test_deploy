@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class ShareService {
   role: any;
+  notiNumber: any;
   constructor() {}
 }

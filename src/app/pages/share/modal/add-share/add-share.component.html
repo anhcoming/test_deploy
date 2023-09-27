@@ -1,36 +1,154 @@
-<form nz-row nz-form>
-  <div nz-col nzSpan="15">
+<form [formGroup]="form" nz-row>
+  <!-- ======LEFT -->
+  <div nz-col nzSpan="17">
     <nz-form-item>
-      <nz-form-label style="width: 20%">Name</nz-form-label>&nbsp;
-      <nz-form-control>
-        <input nz-input placeholder="" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label style="width: 20%">Phone number </nz-form-label>&nbsp;
-      <nz-form-control style="text-align: end">
-        <input nz-input placeholder="" />
-      </nz-form-control> </nz-form-item
+      <nz-form-label nzSpan="4">Chuyên ngành</nz-form-label>
+      <nz-select
+        nzShowSearch
+        (ngModelChange)="changeWard()"
+        formControlName="major"
+        nz-col
+        nzSpan="18"
+      >
+        <nz-option
+          *ngFor="let item of majorList"
+          [nzLabel]="item.name"
+          [nzValue]="item.code"
+        >
+        </nz-option>
+      </nz-select> </nz-form-item
     ><nz-form-item>
-      <nz-form-label style="width: 20%">Email address </nz-form-label>&nbsp;
-      <nz-form-control style="text-align: end">
-        <input nz-input placeholder="" />
+      <nz-form-label nzSpan="4">Tên sinh viên</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <input
+          (change)="genData()"
+          formControlName="name"
+          nz-input
+          type="text"
+        />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label style="width: 20%">Gender</nz-form-label>&nbsp;
-      <nz-form-control style="text-align: end">
-        <input nz-input placeholder="" />
+      <nz-form-label nzSpan="4">Mã sinh viên</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <input formControlName="studentId" readonly nz-input type="text" />
       </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4">Email</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <input formControlName="email" readonly nz-input type="text" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4">CMTND/CCCD</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <input formControlName="cccd" nz-input type="text" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4">Ngày sinh</nz-form-label>
+      <nz-date-picker
+        formControlName="birthday"
+        style="width: 75%"
+        [nzShowWeekNumber]="showWeekNumber"
+      ></nz-date-picker>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4">Số điện thoại</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <input formControlName="phone" nz-input type="text" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4">Giới tính</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <nz-select formControlName="gender" (ngModel)="(0)">
+          <nz-option nzLabel="Nam" [nzValue]="0"></nz-option>
+          <nz-option nzLabel="Nữ" [nzValue]="1"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="4">Địa chỉ</nz-form-label>
+      <div style="width: 75%" nz-row>
+        <nz-select
+          nzShowSearch
+          (ngModelChange)="changeProvince()"
+          formControlName="province"
+          nz-col
+          nzSpan="8"
+          class="pe-2"
+        >
+          <nz-option
+            *ngFor="let item of allProvice"
+            [nzLabel]="item.name"
+            [nzValue]="item.code"
+          >
+          </nz-option>
+        </nz-select>
+        <nz-select
+          nzShowSearch
+          (ngModelChange)="changeDistrict()"
+          formControlName="district"
+          nz-col
+          nzSpan="8"
+          class="pe-2"
+        >
+          <nz-option
+            *ngFor="let item of allDistrict"
+            [nzLabel]="item.name"
+            [nzValue]="item.code"
+          >
+          </nz-option>
+        </nz-select>
+        <nz-select
+          nzShowSearch
+          (ngModelChange)="changeWard()"
+          formControlName="ward"
+          nz-col
+          nzSpan="8"
+        >
+          <nz-option
+            *ngFor="let item of allWard"
+            [nzLabel]="item.name"
+            [nzValue]="item.code"
+          >
+          </nz-option>
+        </nz-select>
+      </div>
     </nz-form-item>
   </div>
 
-  <!-- ///////// -->
-  <div nz-col nzSpan="9" [align]="'center'" style="padding: 0px 20px">
-    <input class="px-3" type="file" (change)="getImage($event)" />
-    <br />
-    <div *ngIf="image1" class="image-container mx-3">
-      <img nz-image nzSrc="{{ image1 }}" />
+  <!-- =======RIGHT -->
+  <div nz-col nzSpan="7">
+    <p class="mt-2 d-flex justify-content-center">Ảnh hồ sơ</p>
+    <div class="container">
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input
+            (change)="getImage($event)"
+            #file
+            type="file"
+            id="imageUpload"
+            accept=".png, .jpg, .jpeg"
+          />
+          <span
+            nz-icon
+            nzType="edit"
+            nzTheme="outline"
+            class="avt"
+            (click)="file.click()"
+          ></span>
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview"
+            style="background-image: url('{{ image1 }}')"
+          ></div>
+        </div>
+      </div>
     </div>
   </div>
 </form>
+<!-- {{ form.value | json }} -->

@@ -3,8 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-forgot-pass',
   templateUrl: './forgot-pass.component.html',
-  styleUrls: ['./forgot-pass.component.scss']
+  styleUrls: ['./forgot-pass.component.scss'],
 })
 export class ForgotPassComponent {
-
+  showPass1: boolean = false;
+  showPass2: boolean = false;
+  showPass3: boolean = false;
+  oldPassword: any;
+  newPassword: any;
+  confirmPassword: any;
 }
